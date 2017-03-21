@@ -1,0 +1,13 @@
+" Posted .vimrc
+"
+" Created by Fisher at 11:49 on 2017-03-10.
+"
+
+cd "${BASH_SOURCE%/*}"
+
+" Load .vimrc_modules
+" TODO Fix the relative path here.
+source .scriptsrc_post/.vimrc_basic
+source .scriptsrc_post/.vimrc_cpp
+
+

@@ -1,0 +1,10 @@
+# Posted .bashrc for Desktop
+#
+# Created by Fisher at 11:47 on 2017-03-10.
+#
+
+
+# For common usage
+alias explorer="xdg-open";
+alias openx="xdg-open";
+

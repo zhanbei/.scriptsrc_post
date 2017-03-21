@@ -1,0 +1,19 @@
+" Posted .vimrc for Basic Usage
+"
+" Created by Fisher at 11:51 on 2017-03-10.
+"
+
+" Using 'jk' to escape ignoring cases.
+inoremap jk <esc>
+inoremap JK <esc>
+
+" Show lines number.
+set number
+
+" Settings for programming.
+set autoindent
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+

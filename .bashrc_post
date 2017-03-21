@@ -1,0 +1,12 @@
+# .bashrc_post scripts.
+#
+# Created by Fisher at 11:40 on 2017-03-10.
+#
+
+
+cd "${BASH_SOURCE%/*}";
+
+source ./.bashrc_basic;
+
+cd ~;
+

@@ -1,0 +1,8 @@
+" Posted .vimrc for C & C++
+" 
+" Created by Fisher at 11:53 on 2017-03-10.
+"
+
+" Auto indent in C/C++.
+set cindent
+
