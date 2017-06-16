@@ -18,7 +18,7 @@ Add Line: `source ./.scriptsrc_post/.bashrc_post;` to your `~/.bashrc` to enable
 
 Enable Posted Vimrc
 
-Add Line: `source ~/.scriptsrc_post/.vimrc_post;` to your `~/.vimrc` to enable posted .vimrc scripts.
+Add Line: `so ~/.scriptsrc_post/.vimrc_post` to your `~/.vimrc` to enable posted .vimrc scripts.
 
 
 
