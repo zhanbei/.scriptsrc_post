@@ -7,7 +7,7 @@ cd "${BASH_SOURCE%/*}"
 
 " Load .vimrc_modules
 " TODO Fix the relative path here.
-source .scriptsrc_post/.vimrc_basic
-source .scriptsrc_post/.vimrc_cpp
+so ~/.scriptsrc_post/.vimrc_basic
+so ~/.scriptsrc_post/.vimrc_cpp
 
 
