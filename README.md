@@ -17,13 +17,53 @@ git clone https://github.com/befisher/.scriptsrc_post.git
 
 Add line: `source ~/.scriptsrc_post/.bashrc_post` to your `~/.bashrc` to enable posted scripts for .bashrc.
 
-You may update `~/.scriptsrc_post/.bashrc_post` file to configure modules to be loaded.
+### Configure Modules to be Loaded([.bashrc_post](.bashrc_post))
+
+You may comment lines in `~/.scriptsrc_post/.bashrc_post` file to configure modules to be loaded.
+
+```bash
+source ~/.scriptsrc_post/.bashrc_basic
+source ~/.scriptsrc_post/.bashrc_git
+```
+
+### Set Up Posted .bashrc for Basic Bash([.bashrc_basic](.bashrc_basic))
+
+```bash
+# Simplify commands.
+# Now you can use cd1 to change to parent folder.
+alias ..="cd ../";
+alias ...="cd ../../";
+alias ....="cd ../../../";
+alias .....="cd ../../../../";
+alias ......="cd ../../../../../";
+alias cd1="cd ..";
+alias cd2="cd ../..";
+alias cd3="cd ../../..";
+alias cd4="cd ../../../..";
+alias cd5="cd ../../../../..";
+
+# For frequently used commands.
+alias c="clear";
+alias r="reset";
+alias q="exit";
+
+# Hint for important operations. 
+# You will got hints for what you have just done:)
+alias rm="rm -v";
+alias cp="cp -v";
+```
+
+### Set Up Posted .bashrc for Git([.bashrc_git](.bashrc_git))
+
+```bash
+# Display git branch in bash prompt.
+# @see https://gist.github.com/justintv/168835
+# It may be displayed unexpectedly or cause some error, so try it out by yourself; (it's fun :).
+export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[01;31m\]\$(__git_ps1 '(%s)')\[\033[01;34m\] \$ \[\033[00m\]"
+```
 
 ## Enable Posted .vimrc Scripts for Your Vim Editor
 
 Add line: `so ~/.scriptsrc_post/.vimrc_post` to your `~/.vimrc` to enable posted .vimrc scripts.
 
 You may update `~/.scriptsrc_post/.vimrc_post` file to configure modules to be loaded.
-
-
-
