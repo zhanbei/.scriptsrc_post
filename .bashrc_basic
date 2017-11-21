@@ -1,12 +1,13 @@
 #!/bin/bash
-# 
-# Created by Fisher at 17:52 on 2016-08-20.
-# 
-# Posted .bashrc
+#
+# Posted .bashrc for basic bash.
+#
+# > 17:52, 08/20/16, by Fisher.
 #
 
 
 # Simplify commands.
+# Now you can use cd1 to change to parent folder.
 alias ..="cd ../";
 alias ...="cd ../../";
 alias ....="cd ../../../";
@@ -23,9 +24,7 @@ alias c="clear";
 alias r="reset";
 alias q="exit";
 
-# Hint for important operations. 
+# Hint for important operations.
+# You will got hints for what you have just done:)
 alias rm="rm -v";
 alias cp="cp -v";
-
-
-
