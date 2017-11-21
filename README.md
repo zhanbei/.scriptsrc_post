@@ -10,7 +10,7 @@ Clone this repository directly to home directory.
 
 ```bash
 cd ~
-git clone https://github.com/befisher/.scriptsrc_post.git
+git clone https://github.com/zhanbei/.scriptsrc_post.git
 ```
 
 ## Enable Posted .bashrc Scripts for Your Bash Terminal
