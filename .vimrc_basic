@@ -3,11 +3,12 @@
 " Created by Fisher at 11:51 on 2017-03-10.
 "
 
-" Using 'jk' to escape ignoring cases.
+" Using 'jk', 'JK', and 'Jk' to escape insert mode.
 inoremap jk <esc>
+inoremap Jk <esc>
 inoremap JK <esc>
 
-" Show lines number.
+" Show lines number by default.
 set number
 
 " Settings for programming.
