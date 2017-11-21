@@ -26,7 +26,7 @@ source ~/.scriptsrc_post/.bashrc_basic
 source ~/.scriptsrc_post/.bashrc_git
 ```
 
-### Set Up Posted .bashrc for Basic Bash([.bashrc_basic](.bashrc_basic))
+### Posted .bashrc for Basic Usage About Bash([.bashrc_basic](.bashrc_basic))
 
 ```bash
 # Simplify commands.
@@ -53,7 +53,7 @@ alias rm="rm -v";
 alias cp="cp -v";
 ```
 
-### Set Up Posted .bashrc for Git([.bashrc_git](.bashrc_git))
+### Posted .bashrc for Git([.bashrc_git](.bashrc_git))
 
 ```bash
 # Display git branch in bash prompt.
@@ -66,4 +66,38 @@ export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]
 
 Add line: `so ~/.scriptsrc_post/.vimrc_post` to your `~/.vimrc` to enable posted .vimrc scripts.
 
-You may update `~/.scriptsrc_post/.vimrc_post` file to configure modules to be loaded.
+### Configure Modules to be Loaded([.vimrc_post](.vimrc_post))
+
+You may comment lines in `~/.scriptsrc_post/.vimrc_post` file to configure modules to be loaded.
+
+```vim
+so ~/.scriptsrc_post/.vimrc_basic
+so ~/.scriptsrc_post/.vimrc_cpp
+```
+
+### Posted .vimrc for Basic Usage About Vim([.vimrc_basic](.vimrc_basic))
+
+
+```vim
+" Using 'jk', 'JK', and 'Jk' to escape ignoring cases.
+inoremap jk <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
+
+" Show lines number by default.
+set number
+
+" Settings for programming.
+set autoindent
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+```
+
+### Posted .vimrc for C++([.vimrc_cpp](.vimrc_cpp))
+
+```vim
+" Auto indent in C/C++.
+set cindent
+```
