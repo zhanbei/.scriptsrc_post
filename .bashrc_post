@@ -4,9 +4,10 @@
 #
 
 
-cd "${BASH_SOURCE%/*}";
+# cd "${BASH_SOURCE%/*}";
 
-source ./.bashrc_basic;
+source ~/.scriptsrc_post/.bashrc_basic
+source ~/.scriptsrc_post/.bashrc_git
 
-cd ~;
+# cd ~;
 
