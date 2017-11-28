@@ -18,3 +18,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Ignore case when searching by default and automatically switch to a case-sensitive search if you use any capital letters.
+" @see https://stackoverflow.com/questions/2287440/how-to-do-case-insensitive-search-in-vim
+set ignorecase
+set smartcase

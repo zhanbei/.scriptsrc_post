@@ -79,7 +79,7 @@ so ~/.scriptsrc_post/.vimrc_cpp
 
 
 ```vim
-" Using 'jk', 'JK', and 'Jk' to escape ignoring cases.
+" Using 'jk', 'JK', and 'Jk' to escape insert mode.
 inoremap jk <esc>
 inoremap Jk <esc>
 inoremap JK <esc>
@@ -93,6 +93,11 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+
+" Ignore case when searching by default and automatically switch to a case-sensitive search if you use any capital letters.
+" @see https://stackoverflow.com/questions/2287440/how-to-do-case-insensitive-search-in-vim
+set ignorecase
+set smartcase
 ```
 
 ### Posted .vimrc for C++([.vimrc_cpp](.vimrc_cpp))
