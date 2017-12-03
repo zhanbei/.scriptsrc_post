@@ -53,13 +53,34 @@ alias rm="rm -v";
 alias cp="cp -v";
 ```
 
-### Posted .bashrc for Git([.bashrc_git](.bashrc_git))
+### Posted .bashrc for the Shell Prompt([.bashrc_prompt](.bashrc_prompt))
 
 ```bash
+# Backing up the current PS1 and providing reset cmd in case for need.
+export PS1BACKUP=$PS1
+alias reset-ps1-to-origin="export PS1=\$PS1BACKUP"
+
+# Removing the >>'$'<< sign and spaces around from original PS1. Substring matches the pattern >>' \$*'<< will be removed.
+export PS1=${PS1/' \$'*/''}
+# Removing any characters following with the last occurrence of ' \$*' in $PS1.
+# export PS1=`echo $PS1 | sed 's/\(.*\)\\\$.*/\1/'`
+
+
+# Posted .bashrc for shell prompt for git.
 # Display git branch in bash prompt.
-# @see https://gist.github.com/justintv/168835
 # It may be displayed unexpectedly or cause some error, so try it out by yourself; (it's fun :).
-export PS1="\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[01;31m\]\$(__git_ps1 '(%s)')\[\033[01;34m\] \$ \[\033[00m\]"
+# @see https://gist.github.com/justintv/168835
+# Appending >>'(GIT_BRANCH_NAME)'<< (Git branch name wrapped in parentheses/round-brackets) with a color of blue.
+export PS1=$PS1'\[\033[01;31m\]$(__git_ps1 '"'"'(%s)'"'"')'
+
+
+# Appending >>' $ '<< (a dollar sign with spaces around) with color being set as red.
+export PS1=$PS1'\[\033[01;34m\] \$'
+
+# Appending >>' '<< (a space) and set prompt color to white.
+export PS1=$PS1'\[\033[00m\] '
+
+# And finally the PS1 probably will be something like >>\[\e]0;\u@\h \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[01;31m\]$(__git_ps1 '(%s)')\[\033[01;34m\] \$\[\033[00m\]<<
 ```
 
 ## Enable Posted .vimrc Scripts for Your Vim Editor

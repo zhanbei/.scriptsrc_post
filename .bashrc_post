@@ -17,7 +17,7 @@ else
 fi
 
 source ~/.scriptsrc_post/.bashrc_basic
-source ~/.scriptsrc_post/.bashrc_git
+source ~/.scriptsrc_post/.bashrc_prompt
 
 # cd ~;
 
