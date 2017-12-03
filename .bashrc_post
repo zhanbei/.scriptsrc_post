@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # .bashrc_post scripts.
 #
 # Created by Fisher at 11:40 on 2017-03-10.
@@ -5,6 +6,15 @@
 
 
 # cd "${BASH_SOURCE%/*}";
+
+# Warn if being sourced more than twice.
+# @see https://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
+if [ -z ${SCRIPTSRC_POST_FIRST_BEING_SOURCED_ALREADY+x} ];
+then
+	SCRIPTSRC_POST_FIRST_BEING_SOURCED_ALREADY='Loaded'
+else
+	echo 'WARNING: .scriptsrc_post/.bashrc_post is being sourced again.'
+fi
 
 source ~/.scriptsrc_post/.bashrc_basic
 source ~/.scriptsrc_post/.bashrc_git
