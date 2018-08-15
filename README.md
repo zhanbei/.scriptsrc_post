@@ -15,11 +15,19 @@ cd ~
 git clone https://github.com/zhanbei/.scriptsrc_post.git
 ```
 
-## Enable Posted .bashrc Scripts for Your Bash Terminal
+## Usage
 
-Add line: `source ~/.scriptsrc_post/.bashrc_post` to your `~/.bashrc` to enable posted scripts for .bashrc.
+- Enable posted .bashrc scripts for your bash terminal.
 
-### Configure Modules to be Loaded([.bashrc_post](.bashrc_post))
+ Add line: `source ~/.scriptsrc_post/.bashrc_post` to your `~/.bashrc` to enable posted scripts for .bashrc.
+
+- Enable posted .vimrc scripts for your vim editor.
+
+ Add line: `so ~/.scriptsrc_post/.vimrc_post` to your `~/.vimrc` to enable posted .vimrc scripts.
+
+## Configurations
+
+### Configure Modules to be Loaded for Bash ([.bashrc_post](.bashrc_post))
 
 You may comment lines in `~/.scriptsrc_post/.bashrc_post` file to configure modules to be loaded.
 
@@ -30,6 +38,17 @@ source ~/.scriptsrc_post/.bashrc_git
 source ~/.scriptsrc_post/.bashrc_coding
 source ~/.scriptsrc_post/.bashrc_proxy
 ```
+
+### Configure Modules to be Loaded for VIM ([.vimrc_post](.vimrc_post))
+
+You may comment lines in `~/.scriptsrc_post/.vimrc_post` file to configure modules to be loaded.
+
+```vim
+so ~/.scriptsrc_post/.vimrc_basic
+so ~/.scriptsrc_post/.vimrc_cpp
+```
+
+## Posted Scripts for Bash
 
 ### Posted .bashrc for Basic Usage About Bash([.bashrc_basic](.bashrc_basic))
 
@@ -155,18 +174,7 @@ alias enable-git-proxy="git config --global http.proxy ${SELECTED_HTTP_PROXY}"
 alias disable-git-proxy="git config --global --unset http.proxy"
 ```
 
-## Enable Posted .vimrc Scripts for Your Vim Editor
-
-Add line: `so ~/.scriptsrc_post/.vimrc_post` to your `~/.vimrc` to enable posted .vimrc scripts.
-
-### Configure Modules to be Loaded([.vimrc_post](.vimrc_post))
-
-You may comment lines in `~/.scriptsrc_post/.vimrc_post` file to configure modules to be loaded.
-
-```vim
-so ~/.scriptsrc_post/.vimrc_basic
-so ~/.scriptsrc_post/.vimrc_cpp
-```
+## Posted Scripts for VIM
 
 ### Posted .vimrc for Basic Usage About Vim([.vimrc_basic](.vimrc_basic))
 
