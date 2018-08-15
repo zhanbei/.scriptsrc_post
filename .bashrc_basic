@@ -2,8 +2,6 @@
 #
 # Posted .bashrc for basic bash.
 #
-# > 17:52, 08/20/16, by Fisher.
-#
 
 
 # Simplify commands.
@@ -27,4 +25,19 @@ alias q="exit";
 # Hint for important operations.
 # You will got hints for what you have just done:)
 alias rm="rm -v";
-alias cp="cp -v";
+# -i, --interactive     prompt before overwrite (overrides a previous -n option)
+alias cp="cp -iv";
+alias mv="mv -iv";
+
+# Find with a maxdepth option.
+alias find-with-maxdepth='find -maxdepth';
+
+# save the bash history to ${HISTFILE}_whatever.
+# @see https://stackoverflow.com/questions/8473121/execute-command-without-keeping-it-in-history
+alias save-bash-history-to-whatever='export HISTFILE="${HISTFILE}_whatever"'
+
+# Print every command being executed.
+# @see https://stackoverflow.com/questions/2853803/how-to-echo-shell-commands-as-they-are-executed
+alias set-on-xtrace='set -o xtrace'
+# Stop printing every command being executed.
+alias set-off-xtrace='set +o xtrace'
