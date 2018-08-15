@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# The bashrc related to coding.
+#
+
+# Count lines of codes of files of a specified format.
+# @see https://stackoverflow.com/questions/1358540/how-to-count-all-the-lines-of-code-in-a-directory-recursively
+function count-lines-of-code(){
+	local p1=$1;
+	local p2=$2;
+	if [ -z "$1" ]; then
+		(echo -e "\e[01;33mYou are not specifying the target folder, and the current directory \".\" will be used.\e[0m" >&2)
+		(echo -e "\e[01;33mYou may use \"count-lines-of-code ./some-folder js\" to count code lines of all \"*.js\" files.\e[0m" >&2)
+		p1='.';
+	fi;
+	if [ -z "$2" ]; then
+		(echo -e "\e[01;33mYou are not specifying the file extensions, and all files like \"*.*\" are gonna be checked.\e[0m" >&2)
+		p2='*';
+	fi;
+	find "${p1}" -name "*.${p2}" | xargs wc -l
+}
+
+# Total number of lines of codes of files of a specified format.
+function count-lines-of-code-summary(){
+	count-lines-of-code "$@" | tail -n1
+}
