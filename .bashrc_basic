@@ -27,4 +27,7 @@ alias q="exit";
 # Hint for important operations.
 # You will got hints for what you have just done:)
 alias rm="rm -v";
-alias cp="cp -v";
+# -i, --interactive     prompt before overwrite (overrides a previous -n option)
+alias cp="cp -iv";
+alias mv="mv -iv";
+
