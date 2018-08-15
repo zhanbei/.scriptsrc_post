@@ -20,6 +20,7 @@ source ~/.scriptsrc_post/.bashrc_basic
 source ~/.scriptsrc_post/.bashrc_prompt
 source ~/.scriptsrc_post/.bashrc_git
 source ~/.scriptsrc_post/.bashrc_coding
+source ~/.scriptsrc_post/.bashrc_proxy
 
 # cd ~;
 

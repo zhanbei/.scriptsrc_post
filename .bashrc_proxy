@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# The bashrc for proxy module.
+#
+
+# Enable proxy for the current terminal using the exported $SELECTED_HTTP_PROXY.
+# The http proxy is used because many command do not support socks5 proxy well.
+# Make sure your SELECTED_HTTP_PROXY has been correctly exported.
+# export SELECTED_SOCKS5_PROXY='socks://127.0.0.1:1080';
+# export SELECTED_HTTP_PROXY='http://127.0.0.1:1081';
+alias using-proxy="export HTTP_PROXY=${SELECTED_HTTP_PROXY}; export HTTPS_PROXY=${SELECTED_HTTP_PROXY}; export HTTP_PROXY=${SELECTED_HTTP_PROXY}; export https_proxy=${SELECTED_HTTP_PROXY}; export no_proxy='127.0.0.1,localhost,*.loxal.me,';";
+alias enable-proxy=using-proxy;
+alias disable-proxy="export HTTP_PROXY=''; export https_proxy=''; export HTTP_PROXY=''; export HTTPS_PROXY='';";
+
+# Use http proxy for git.
+# @see https://stackoverflow.com/questions/128035/how-do-i-pull-from-a-git-repository-through-an-http-proxy
+alias enable-git-proxy="git config --global http.proxy ${SELECTED_HTTP_PROXY}"
+alias disable-git-proxy="git config --global --unset http.proxy"
