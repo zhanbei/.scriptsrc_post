@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# The bashrc for git module.
+#
+
+
+# Print out the history log in oneline with a prefix of '- ', of the current branch by default.
+# @see https://git-scm.com/docs/pretty-formats
+alias git-log-dash-oneline='git log --format="- %s"';
