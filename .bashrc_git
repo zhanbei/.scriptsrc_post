@@ -7,3 +7,24 @@
 # Print out the history log in oneline with a prefix of '- ', of the current branch by default.
 # @see https://git-scm.com/docs/pretty-formats
 alias git-log-dash-oneline='git log --format="- %s"';
+
+# Set the remote tracking urls of origin to https(fetch) and git(push).
+git-remote-github ()
+{
+	if [ -z "$1" ]; then
+		( echo -e "\e[01;33mYou should specifying the path of your repository.\e[0m" 1>&2 );
+		( echo -e "\e[01;33mUsage: git-remote-github user-name/repo-path" 1>&2 );
+		git remote -v
+		return;
+	fi;
+	local mRepoPath=$1;
+
+	git remote -v
+
+	set -o xtrace
+	git remote set-url origin https://github.com/${mRepoPath}.git
+	git remote set-url origin --push git@github.com:${mRepoPath}.git
+	set +o xtrace
+
+	git remote -v
+}
