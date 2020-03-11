@@ -8,6 +8,14 @@
 # @see https://git-scm.com/docs/pretty-formats
 alias git-log-dash-oneline='git log --format="- %s"';
 
+alias git-tags='git tag -l -n9';
+
+alias git-ignore-dot-idea-folder='echo "*" >> .idea/.gitignore';
+
+# Push/Pull the local commits of the master and development branches to/from origin.
+alias git-push-origin-master-and-development='git push origin master development';
+alias git-pull-origin-master-and-development='git pull origin master development';
+
 # Set the remote tracking urls of origin to https(fetch) and git(push).
 git-remote-github ()
 {
