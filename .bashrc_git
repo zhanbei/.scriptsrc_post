@@ -4,13 +4,12 @@
 #
 
 
+alias git-count-commits-shortlog='git submodule foreach --recursive git shortlog -s -n -e --all --no-merges'
+alias git-ignore-dot-idea-folder='echo "*" >> .idea/.gitignore';
 # Print out the history log in oneline with a prefix of '- ', of the current branch by default.
 # @see https://git-scm.com/docs/pretty-formats
 alias git-log-dash-oneline='git log --format="- %s"';
-
 alias git-tags='git tag -l -n9';
-
-alias git-ignore-dot-idea-folder='echo "*" >> .idea/.gitignore';
 
 # Push/Pull the local commits of the master and development branches to/from origin.
 alias git-push-origin-master-and-development='git push origin master development';
@@ -36,3 +35,20 @@ git-remote-github ()
 
 	git remote -v
 }
+
+# gitrsm = Git Recursive SubModules.
+alias gitrsm-simplified-status='git submodule status --recursive'
+alias gitrsm-detailed-status='git submodule foreach --recursive git status'
+alias gitrsm-local-status='git submodule foreach --recursive "git status | grep --color=always \"(new commits\|modified content)\" || true && echo"'
+alias gitrsm-remote-status='git submodule foreach --recursive "git status | grep --color=always \"ahead.*commits*.\" || true && echo"'
+alias gitrsm-status='git submodule foreach --recursive "git status | grep --color=always \"ahead.*commits*.\|(new commits\|modified content)\" || true && echo"'
+alias gitrsm-count-commits='git submodule foreach --recursive git shortlog -s -n -e --all --no-merges'
+alias gitrsm-config-user-info-local='git submodule foreach --recursive "git config --local --list | grep user || true && echo"'
+
+alias gitrsm-pull='git submodule foreach --recursive git pull origin master'
+alias gitrsm-raw-push='git submodule foreach --recursive git push origin master'
+cmdGitPushIfNeeded='git status | grep ahead && echo Pushing from ${toplevel}/${name} && git push origin master || true'
+alias gitrsm-push-works="git submodule foreach --recursive '${cmdGitPushIfNeeded}'"
+alias gitrsm-checkout-master='git submodule foreach --recursive git checkout master'
+alias gitrsm-fetch='git submodule foreach --recursive git fetch origin master'
+alias gitrsm-merge-origin-master='git submodule foreach --recursive git merge origin/master'
